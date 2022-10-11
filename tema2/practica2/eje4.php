@@ -1,5 +1,12 @@
-<?php  
-/*Vamos a construir un encriptador y desencriptador de mensajes. Crearemos dos
+<?php
+include_once($_SERVER["DOCUMENT_ROOT"] . "/cabecera.php");
+?>
+
+<div class="col-md-10 themed-grid-col">
+  <div class="p-3 bg-white">
+
+    <?php
+    /*Vamos a construir un encriptador y desencriptador de mensajes. Crearemos dos
 funciones:
 - encriptar($mensaje,$clave)
 o donde el primer argumento sea el mensaje a encriptar
@@ -21,13 +28,39 @@ muestra el mensaje que coincide con el original. Pista: utilizar las funciones P
 pasar un carácter a su correspondiente dígito ASCII y al revés.
  */
 
-function encriptar($mensaje,$clave) {
-    $res="";
-    for ($i=0; $i < strlen($mensaje); $i++) { 
-        
+    function encriptar($mensaje, $clave)
+    {
+      $res = "";
+      for ($i = 0; $i < strlen($mensaje); $i++) {
+        $res = $res . chr(ord($mensaje[$i]) + $clave);
+      }
+
+      return $res;
     }
-}
 
+    function desencriptar($mensaje, $clave)
+    {
+      $res = "";
+      for ($i = 0; $i < strlen($mensaje); $i++) {
+        $res = $res . chr(ord($mensaje[$i]) - $clave);
+      }
 
+      return $res;
+    }
 
+    $cadena = "alexander";
+    $key = 3;
+    $palEnc = encriptar($cadena, $key);
+    echo $palEnc;
+    echo "<br>";
+    echo desencriptar($palEnc, $key);
+
+    ?>
+
+  </div>
+</div>
+</div>
+
+<?php
+include_once($_SERVER["DOCUMENT_ROOT"] . "/pie.php");
 ?>
