@@ -20,6 +20,7 @@ include_once($_SERVER["DOCUMENT_ROOT"] . "/cabecera.php");
 
         echo "<div class='container'>";
         echo "<div class='row g-5'>";
+        echo "<img src='./img8/juego.png' alt='' style='width:60%; height:400px; margin-left:20%;'>";
         foreach ($lolPersonajes as $value) {
             echo "<div class='card mb-3' style='width: 90%; height:625px; background:url(" . $value["bg"] . ");'>
             <div class='row g-2'>
@@ -53,15 +54,6 @@ include_once($_SERVER["DOCUMENT_ROOT"] . "/cabecera.php");
         }
         echo "</div>";
         echo "</div>";
-
-
-
-
-
-
-
-
-
 
         ?>
 
