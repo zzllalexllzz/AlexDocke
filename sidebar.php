@@ -58,7 +58,8 @@
 			<div class="collapse" id="tema3">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 					<p><u><strong>Practica 1</strong></u></p>
-					<li><a href="/tema3/practica1/login.php" class="link-dark rounded">Ejercicio 1</a></li>
+					<li><a href="/tema3/Practica1/login.php" class="link-dark rounded">Ejercicio 1</a></li>
+					
 					<p><u><strong>Practica 2</strong></u></p>
 					<li><a href="#" class="link-dark rounded">Ejercicio 1</a></li>
 					<p><u><strong>Practica 3</strong></u></p>
