@@ -96,12 +96,12 @@ echo '<div class="container-fluid">
 							</div>
 							<div class="row no-gutters align-items-center">
 								<div class="col-auto">
-									<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">' . $_SESSION['pro']['porcentaje'] . '</div>
+									<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">' . $_SESSION['pro']['porcentaje'] . '%</div>
 								</div>
 								<div class="col">
 									<div class="progress progress-sm mr-2">
 										<div class="progress-bar bg-info" role="progressbar"
-											style="width: ' . $_SESSION['pro']['porcentaje'] . '%" aria-valuenow="50" aria-valuemin="0"
+											style="width: ' . $_SESSION['pro']['porcentaje'] . '" aria-valuenow="50" aria-valuemin="0"
 											aria-valuemax="100"></div>
 									</div>
 								</div>
