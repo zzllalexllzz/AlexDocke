@@ -130,7 +130,7 @@ echo '<div class="container-fluid">
 	</div>';
 
 ?>
-<!-- Donut Chart -->
+<!-- Donut grafica en ver proyectos -->
 <div class="col-xl-4 col-lg-5">
 	<div class="card shadow mb-4">
 		<!-- Card Header - Dropdown -->
@@ -149,12 +149,13 @@ echo '<div class="container-fluid">
 <!-- Page level plugins -->
 <script src="vendor/chart.js/Chart.min.js"></script>
 
-<script>
+<script>//javascript del grafico donut
+
 	// Set new default font family and font color to mimic Bootstrap's default styling
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
-let por =<?php echo $_SESSION['pro']['porcentaje'];?>;
+let numPor =<?php echo $_SESSION['pro']['porcentaje'];?>;
 
 // Pie Chart Example
 var ctx = document.getElementById("myPieChart");
@@ -163,7 +164,7 @@ var myPieChart = new Chart(ctx, {
   data: {
     labels: ["Incompleto","Completo"],
     datasets: [{
-      data: [100-por, por],
+      data: [100-numPor, numPor],
       backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
       hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
