@@ -41,6 +41,13 @@
                             <div class='text-center'>
                                 <h1 class='h4 text-gray-900 mb-4'>¡Bienvenido de nuevo!</h1>
                             </div>
+                            <?php
+                            if ($_GET) {
+                                if ($_GET['error']) {
+                                   echo' <p class="text-danger text-center">'.$_GET['error'].'</p>';
+                                }
+                            } 
+                            ?>
                             <form class='user' action='controlador.php' method='POST'>
                                 <div class='form-group'>
                                     <input type='email' name='email' class='form-control form-control-user'

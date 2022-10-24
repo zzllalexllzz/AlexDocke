@@ -42,11 +42,11 @@ function pintarProyectos($array)
 //metodo que asegura que la password sea con mas 8 caracteres y una mayuscula
 function passwordSeguro($cadena) {
     $cont=0;
-    $cont = preg_match_all('/([A-Z]{1})/',$cadena);
+    $cont = preg_match_all('/([A-Z])/',$cadena);
     if ($cont==1 && strlen($cadena)>8 ) {
         echo '<script>window.location="' . "proyectos.php" . '"</script>';
     } else {
-        $error="contraseña incorrecta";
+        $error="Contraseña Incorrecta (8 caracteres min y alguna mayuscula)";
         echo '<script>window.location="' . "login.php?error=".$error."" . '"</script>';
     }
 }
@@ -92,7 +92,7 @@ function pintarNuevoProyecto(){
 									id='prioridad' placeholder='Prioridad'>
 							</div>
 							
-							<button type='hidden' name='nuevoProyecto' class='btn btn-primary btn-user btn-block'>
+							<button type='submit' name='nuevoProyecto' class='btn btn-primary btn-user btn-block'>
 								Crear Proyecto
 							</button>
 						</form>
