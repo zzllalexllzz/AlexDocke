@@ -1,9 +1,9 @@
 <?php
-session_start();
+session_start();//iniciamos la sesion
 ?>
 <?php
-include_once("cabecera.php");
-include_once("lib.php");
+include_once("cabecera.php");//incluimos la cabecera
+include_once("lib.php");//incluimos el lib.php para obtener los metodos
 ?>
 
 	<?php

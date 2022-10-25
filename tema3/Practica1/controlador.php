@@ -1,11 +1,11 @@
 <?php
-session_start();
-include_once("lib.php");
+session_start();//iniciamos la sesion
+include_once("lib.php");//incluimos el archivo lib.php para usar los metodos
 ?>
 
-
 <?php
-//post del login.php
+//post del login.php 
+//comprueba la session y coge los datos del email y el password
 if ($_POST) {
     if (isset($_POST["email"]) && isset($_POST["password"])) {
         $_SESSION['email'] = $_POST["email"];
@@ -16,6 +16,7 @@ if ($_POST) {
 }
 
 //post del nuevoProyecto.php 
+//añade un numevo proyecto a la session de proyectos con todos los datos requerids
 if ($_POST) {
     if (isset($_POST['nuevoProyecto'])) {
         $nombre = filtrado($_POST['nombre']);

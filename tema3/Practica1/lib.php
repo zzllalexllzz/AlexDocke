@@ -1,4 +1,3 @@
-
 <?php
 function filtrado($datos)
 {
@@ -8,7 +7,7 @@ function filtrado($datos)
     return $datos;
 }
 
-//pinta todos los proyectos sin el id
+//pinta todos los proyectos en una tabla sin el id
 function pintarProyectos($array)
 {
     echo "<table class='table table-striped'>
@@ -42,7 +41,7 @@ function pintarProyectos($array)
 //metodo que asegura que la password sea con mas 8 caracteres y una mayuscula
 function passwordSeguro($cadena) {
     $cont=0;
-    $cont = preg_match_all('/([A-Z]){2}/',$cadena);
+    $cont = preg_match_all('/([A-Z]){2}/',$cadena);//metodo q cuenta las mayusculas que aparecen en el password
     if ($cont==1 && strlen($cadena)>8 ) {
         echo '<script>window.location="' . "proyectos.php" . '"</script>';
     } else {

@@ -1,10 +1,11 @@
 <?php
-session_start();
+session_start();//iniciamos la session 
 ?>
 <?php
-include_once("cabecera.php");
+include_once("cabecera.php");//inclimos la cabecera
 ?>
 <?php
+//pinta los datoos de un  p`royecto enconcreto
 echo '<div class="container-fluid">
 
 	<!-- Page Heading -->
@@ -130,7 +131,7 @@ echo '<div class="container-fluid">
 	</div>';
 
 ?>
-<!-- Donut grafica en ver proyectos -->
+<!-- PINTA LA GRAFICA DEL PROYECTO Y EL PORCENTAGE QUE ESTA COMPLETADO -->
 <div class="col-xl-4 col-lg-5">
 	<div class="card shadow mb-4">
 		<!-- Card Header - Dropdown -->
@@ -146,16 +147,16 @@ echo '<div class="container-fluid">
 		</div>
 	</div>
 </div>
-<!-- Page level plugins -->
+<!-- COMPLEMENTO DEL GRAFICO DONUT  -->
 <script src="vendor/chart.js/Chart.min.js"></script>
 
-<script>//javascript del grafico donut
+<script>//COMPLEMENTO DEL GRAFICO DONUT PARA METER LOS DATOS DEL PROYECTO
 
 	// Set new default font family and font color to mimic Bootstrap's default styling
 Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#858796';
 
-let numPor =<?php echo $_SESSION['pro']['porcentaje'];?>;
+let numPor =<?php echo $_SESSION['pro']['porcentaje'];?>;//GUARDO EL PORCETAGE DEL PROYECTO Y LO GUARDO EN UNA VARIABLE 
 
 // Pie Chart Example
 var ctx = document.getElementById("myPieChart");

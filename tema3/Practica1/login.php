@@ -41,7 +41,10 @@
                             <div class='text-center'>
                                 <h1 class='h4 text-gray-900 mb-4'>¡Bienvenido de nuevo!</h1>
                             </div>
+                            
                             <?php
+                            //get del controlador.php que envia al login por un error del  password
+                            //y pinta un mensaje de aviso 
                             if ($_GET) {
                                 if ($_GET['error']) {
                                    echo' <p class="text-danger text-center">'.$_GET['error'].'</p>';
