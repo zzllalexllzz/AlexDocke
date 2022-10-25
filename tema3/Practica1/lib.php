@@ -43,10 +43,10 @@ function passwordSeguro($cadena) {
     $cont=0;
     $cont = preg_match_all('/([A-Z]){2}/',$cadena);//metodo q cuenta las mayusculas que aparecen en el password
     if ($cont==1 && strlen($cadena)>8 ) {
-        echo '<script>window.location="' . "proyectos.php" . '"</script>';
+		header("Location: proyectos.php");
     } else {
         $error="Contraseña Incorrecta (8 caracteres min y alguna mayuscula)";
-        echo '<script>window.location="' . "login.php?error=".$error."" . '"</script>';
+		header("Location: login.php?error=$error");
     }
 }
 
@@ -104,6 +104,3 @@ function pintarNuevoProyecto(){
 	</div>";
 }
 ?>
-   
-
-    

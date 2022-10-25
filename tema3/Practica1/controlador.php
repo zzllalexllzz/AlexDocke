@@ -2,7 +2,6 @@
 session_start();//iniciamos la sesion
 include_once("lib.php");//incluimos el archivo lib.php para usar los metodos
 ?>
-
 <?php
 //post del login.php 
 //comprueba la session y coge los datos del email y el password
@@ -14,7 +13,6 @@ if ($_POST) {
         passwordSeguro($_SESSION['password']);
     }
 }
-
 //post del nuevoProyecto.php 
 //añade un numevo proyecto a la session de proyectos con todos los datos requerids
 if ($_POST) {
@@ -35,11 +33,9 @@ if ($_POST) {
         }
         //añade el nuevo proyecto a la session de proyectos
         array_push($_SESSION['proyectos'], ['id' => $id, 'nombre' => $nombre, 'fechaIni' => $fechaIni, 'fechaFin' => $fechaFin, 'diasTranscurridos' => $diasTranscurridos, 'porcentaje' => $porcentaje, 'prioridad' => $prioridad]);
-
-        echo '<script>window.location="' . "proyectos.php" . '"</script>';
+        header("Location: proyectos.php");
     }
 }
-
 //get de proyectos.php elimina todos los proyectos
 if ($_GET) {
     if ($_GET['accion'] == "eliminarTodo") {
@@ -47,10 +43,9 @@ if ($_GET) {
         foreach ($_SESSION['proyectos'] as $key => $value) {
             unset($_SESSION['proyectos'][$key]);
         }
-        echo '<script>window.location="' . "proyectos.php" . '"</script>';
+        header("Location: proyectos.php");
     }
 }
-
 //get de  proyectos.php elimina un proyecto en concreto por el id
 if ($_GET) {
     if ($_GET['accion'] == "eliminar") {
@@ -59,10 +54,9 @@ if ($_GET) {
                 unset($_SESSION['proyectos'][$key]);
             }
         }
-        echo '<script>window.location="' . "proyectos.php" . '"</script>';
+        header("Location: proyectos.php");
     }
 }
-
 //get de proyectos.php envia a verPoryecto.php, coge un solo proyectos y lo añade a un nueva variable para llevar los datos y mostrarlo en  verPoryecto.php.
 if ($_GET) {
     if ($_GET['accion'] == "info") {
@@ -71,10 +65,7 @@ if ($_GET) {
                 $_SESSION['pro']=$_SESSION['proyectos'][$key];
             }
         }
-        echo '<script>window.location="' . "verProyecto.php" . '"</script>';
+        header("Location: verProyecto.php");
     }
 }
-
-
-
 ?>
