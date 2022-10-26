@@ -1,21 +1,16 @@
 <?php
-function encriptar($mensaje, $clave)
-{
+function encriptar($mensaje, $clave){
     $res = "";
     for ($i = 0; $i < strlen($mensaje); $i++) {
         $res = $res . chr(ord($mensaje[$i]) + $clave);
     }
-
     return $res;
 }
-
-function desencriptar($mensaje, $clave)
-{
+function desencriptar($mensaje, $clave){
     $res = "";
     for ($i = 0; $i < strlen($mensaje); $i++) {
         $res = $res . chr(ord($mensaje[$i]) - $clave);
     }
-
     return $res;
 }
 //Si he pinchado en un link
@@ -26,7 +21,7 @@ if ($_GET) {
         $gustos = $_COOKIE['servidor'];
 
         //Aquí desencriptas los datos
-       // $gustos = desencriptar($gustos, 3);
+        $gustos = desencriptar($gustos, 3);
 
         //Separar los gustos y meterlos en un array
         $gustosArray = explode("#", $gustos);
@@ -57,7 +52,9 @@ if ($_GET) {
         //echo "Cookie creada";
     } else {
         //Primera vez que entra
-        setcookie('servidor', "CreacionCookie#moda-0#deporte-0#juegos-0", time() + 60000, "/tema3", "localhost", false, true);
+        $cad="CreacionCookie#moda-0#deporte-0#juegos-0";
+        $cad=encriptar($cad, 3);
+        setcookie('servidor', $cad, time() + 60000, "/tema3", "localhost", false, true);
     }
 
 
