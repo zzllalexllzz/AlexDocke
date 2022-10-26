@@ -58,5 +58,6 @@ if ($_GET) {
     }
 
 
-    echo '<script>window.location="' . "index.php" . '"</script>';
+    header("Location: index.php");
 }
+?>

@@ -68,4 +68,11 @@ if ($_GET) {
         header("Location: verProyecto.php");
     }
 }
+//get del pie.php el cerrar cession hace que borre la session actual para iniciar de nuevo desde 0 o con los proyectos por defecto.
+if ($_GET) {
+    if ($_GET['accion']=="nuevo") {
+        session_destroy();
+        header("Location: login.php");
+    }
+}
 ?>
