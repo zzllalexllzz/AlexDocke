@@ -63,7 +63,7 @@
 					<p><u><strong>Practica 2</strong></u></p>
 					<li><a href="#" class="link-dark rounded">Ejercicio 1</a></li>
 					<p><u><strong>Practica 3</strong></u></p>
-					<li><a href="/tema3/practica3/index.php" class="link-dark rounded">Ejercicio 1</a></li>
+					<li><a href="/tema3/Practica3/index.php" class="link-dark rounded">Ejercicio 1</a></li>
 				</ul>
 			</div>
 		</li>
