@@ -48,13 +48,13 @@ if ($_GET) {
         $gustosString = encriptar($gustosString, 3);
 
         //Creación de la cookie
-        setcookie('servidor', $gustosString, time() + 60000, "/tema3", "https://appalexbr.herokuapp.com", false, true);
+        setcookie('servidor', $gustosString, time() + 60000, "/tema3", "appalexbr.herokuapp.com", true, false);
         //echo "Cookie creada";
     } else {
         //Primera vez que entra
         $cad="CreacionCookie#moda-0#deporte-0#juegos-0";
         $cad=encriptar($cad, 3);
-        setcookie('servidor', $cad, time() + 60000, "/tema3", "https://appalexbr.herokuapp.com", false, true);
+        setcookie('servidor', $cad, time() + 60000, "/tema3", "appalexbr.herokuapp.com", true, false);
     }
 
 
