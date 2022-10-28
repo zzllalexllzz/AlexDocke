@@ -11,5 +11,8 @@
     <a href="./crearCookie.php?interes=deporte">Deportes</a><br>
     <a href="./crearCookie.php?interes=juegos">Juegos</a><br>
     <a href="./crearCookie.php?interes=moda">Moda</a><br>
+    <br>
+    <br>
+    <a href="./publicidad.php">PUBLICIDAD PARA VER EL CONTADOR</a>
 </body>
 </html>
