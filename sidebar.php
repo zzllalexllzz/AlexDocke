@@ -61,7 +61,9 @@
 					<li><a href="/tema3/Practica1/login.php" class="link-dark rounded">Ejercicio 1</a></li>
 					
 					<p><u><strong>Practica 2</strong></u></p>
-					<li><a href="#" class="link-dark rounded">Ejercicio 1</a></li>
+					<li><a href="/tema3/Practica2/bingo/index.php" class="link-dark rounded">Ejercicio 1</a></li>
+					<li><a href="/tema3/Practica2/ahorcado/index.php" class="link-dark rounded">Ejercicio 2</a></li>
+
 					<p><u><strong>Practica 3</strong></u></p>
 					<li><a href="/tema3/Practica3/index.php" class="link-dark rounded">Ejercicio 1</a></li>
 				</ul>
@@ -74,7 +76,7 @@
 			</button>
 			<div class="collapse" id="tema4">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-					<li><a href="#" class="link-dark rounded">Ejercicio 1</a></li>
+					<li><a href="/tema4/Practica1/login.php" class="link-dark rounded">Ejercicio 1</a></li>
 				</ul>
 			</div>
 		</li>

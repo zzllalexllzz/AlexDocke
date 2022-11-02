@@ -1,7 +1,10 @@
 <?php
+session_start();//iniciamos la sesion
+?>
+<?php
 
 //Load Composer's autoloader
-require './vendor/autoload.php';
+require '../vendor/autoload.php';
 
 // create new PDF document
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
@@ -60,13 +63,32 @@ $pdf->AddPage();
 $pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
 
 // Set some content to print
-$html = <<<EOD
-<h1>Welcome to <a href="http://www.tcpdf.org" style="text-decoration:none;background-color:#CC0000;color:black;">&nbsp;<span style="color:black;">TC</span><span style="color:white;">PDF</span>&nbsp;</a>!</h1>
-<i>This is the first example of TCPDF library.</i>
-<p>This text is printed using the <i>writeHTMLCell()</i> method but you can also use: <i>Multicell(), writeHTML(), Write(), Cell() and Text()</i>.</p>
-<p>Please check the source code documentation and other examples for further information.</p>
-<p style="color:#CC0000;">TO IMPROVE AND EXPAND TCPDF I NEED YOUR SUPPORT, PLEASE <a href="http://sourceforge.net/donate/index.php?group_id=128076">MAKE A DONATION!</a></p>
-EOD;
+
+    $html= "<table class='table table-striped'>
+	<thead class='table-light'>
+	<tr>
+	<td><strong>NOMBRE</strong></td>
+	<td><strong>FECHA INICIO</strong></td>
+	<td><strong>FECHA FINAL</strong></td>
+	<td><strong>DIAS TRANSCURRIDOS</strong></td>
+	<td><strong>PORCENTAJE</strong></td>
+	<td><strong>PRIORIDAD</strong></td>
+	</tr>
+	</thead>
+	<tbody>";
+    foreach ($_SESSION['proyectos'] as $value) {
+        $html.= "<tr>
+		<td>" . $value["nombre"] . "</td>
+		<td>" . $value["fechaIni"] . "</td>
+		<td>" . $value["fechaFin"] . "</td>
+		<td>" . $value["diasTranscurridos"] . "</td>
+		<td>" . $value["porcentaje"] . "</td>
+		<td>" . $value["prioridad"] . "</td>
+		</tr>";
+    }
+    $html.= "</tbody>
+	</table>";
+
 
 // Print text using writeHTMLCell()
 $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
@@ -77,10 +99,11 @@ echo "Generando ...";
 
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
-$flujo = $pdf->Output('ejemplo.pdf', 'S');
-file_put_contents("ejemplo.pdf", $flujo);
+$flujo = $pdf->Output('Proyectos.pdf', 'S');
+file_put_contents("Proyectos.pdf", $flujo);
 
 echo "Generado."
+
 //============================================================+
 // END OF FILE
 //============================================================+
