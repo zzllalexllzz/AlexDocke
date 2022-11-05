@@ -119,8 +119,8 @@ include_once('lib.php'); ?>
                     <?php
                     //si la palabra es igual a la palabraActual el jugador ganara
                     if ($_SESSION['palabra'] == $_SESSION['palabraActual']) {
-                        echo "<h1 class='text-center '>GANASTE</h1>";
-                        echo "<h1 class='text-center '>ENHORABUENA</h1>";
+                        echo "<h1 class='text-center text-success'>GANASTE</h1>";
+                        echo "<h1 class='text-center text-success'>ENHORABUENA</h1>";
                         echo "<br>";
                         echo "<br>";
                         echo "<h3 class='text-center gana'><a href='controlador.php?accion=nuevoJuego' class='btn btn-outline-light' class='text-center'>Volver a Jugar</a></h3>";
@@ -147,8 +147,8 @@ include_once('lib.php'); ?>
                         echo "<br>";
                         echo "<div class='perdiste'>";
                     //si el jugador llega a 6 fallos el jugador pierde
-                        echo "<h1 class='text-center '>PERDISTE</h1>";
-                        echo "<h1 class='text-center '>SIGUE PARTICIPANDO</h1>";
+                        echo "<h1 class='text-center text-danger'>PERDISTE</h1>";
+                        echo "<h1 class='text-center text-danger'>SIGUE PARTICIPANDO</h1>";
                         echo "<h3 class='text-center '><a href='controlador.php?accion=nuevoJuego' class='btn btn-outline-light' class='text-center'>Volver a Jugar</a></h3>";
                         echo "</div>";
                     }
