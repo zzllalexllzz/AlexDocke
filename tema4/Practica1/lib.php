@@ -214,6 +214,7 @@ echo "Generado.";
 // END OF FILE
 //============================================================+
 }
+
 /**********************************************************************/ 
 //metodo para enviar un correo el pdf que haviamos creado anterior mente
 function enviarPdf($email) {

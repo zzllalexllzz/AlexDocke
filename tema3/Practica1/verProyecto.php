@@ -148,7 +148,7 @@ echo '<div class="container-fluid">
 	</div>
 </div>
 <!-- COMPLEMENTO DEL GRAFICO DONUT  -->
-<script src="vendor/chart.js/Chart.min.js"></script>
+<script src="texturas/chart.js/Chart.min.js"></script>
 
 <script>//COMPLEMENTO DEL GRAFICO DONUT PARA METER LOS DATOS DEL PROYECTO
 
