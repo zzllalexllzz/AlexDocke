@@ -52,14 +52,17 @@ include_once('lib.php'); ?>
         margin-left: 20px;
     }
     .gana a{
-        font-size: 20px;
+        font-size: 25px;
+    }
+    .ganas{
+        font-size: 60px;
     }
 </style>
 <body>
     <div class="container">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <h1 class="text-center tam">BIENVENIDOS A MI AHORCADO</h1>
+                <h1 class="text-center tam">BIENVENIDO A MI AHORCADO</h1>
                 <div class="col text-center">
                     <?php
                     if (!isset($_SESSION['letras'])) {
@@ -69,7 +72,7 @@ include_once('lib.php'); ?>
                         $_SESSION['fallos'] = 0;
                     }
                     //pinta pablabra para prueba
-                    pintarPalabra($_SESSION['palabra']);
+                    //pintarPalabra($_SESSION['palabra']);
                     //echo '<br>';
                     //pinta el numero de fallos que lleva el jugador
                     echo "<h3>Fallos: " . $_SESSION['fallos'] . "</h3><br>";
@@ -119,11 +122,12 @@ include_once('lib.php'); ?>
                     <?php
                     //si la palabra es igual a la palabraActual el jugador ganara
                     if ($_SESSION['palabra'] == $_SESSION['palabraActual']) {
-                        echo "<h1 class='text-center text-success'>GANASTE</h1>";
-                        echo "<h1 class='text-center text-success'>ENHORABUENA</h1>";
+                        echo "<h1 class='text-center ganas text-success'>GANASTE</h1>";
+                        echo "<h1 class='text-center ganas text-success'>ENHORABUENA</h1>";
+                        echo "<audio src='./img/victoria.wav' autoplay></audio>";
                         echo "<br>";
                         echo "<br>";
-                        echo "<h3 class='text-center gana'><a href='controlador.php?accion=nuevoJuego' class='btn btn-outline-light' class='text-center'>Volver a Jugar</a></h3>";
+                        echo "<h2 class='text-center gana'><a href='controlador.php?accion=nuevoJuego' class='btn btn-outline-light' class='text-center'>Volver a Jugar</a></h2>";
                     } else if ($_SESSION['fallos'] == 0) {
                         echo '<img src="./img/1.png" alt="">';
                     } else if ($_SESSION['fallos'] == 1) {
@@ -147,6 +151,7 @@ include_once('lib.php'); ?>
                         echo "<br>";
                         echo "<div class='perdiste'>";
                     //si el jugador llega a 6 fallos el jugador pierde
+                        echo"<audio src='./img/gameover.wav' autoplay></audio>";
                         echo "<h1 class='text-center text-danger'>PERDISTE</h1>";
                         echo "<h1 class='text-center text-danger'>SIGUE PARTICIPANDO</h1>";
                         echo "<h3 class='text-center '><a href='controlador.php?accion=nuevoJuego' class='btn btn-outline-light' class='text-center'>Volver a Jugar</a></h3>";
