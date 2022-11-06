@@ -72,7 +72,7 @@ include_once('lib.php'); ?>
                         $_SESSION['fallos'] = 0;
                     }
                     //pinta pablabra para prueba
-                    //pintarPalabra($_SESSION['palabra']);
+                    pintarPalabra($_SESSION['palabra']);
                     //echo '<br>';
                     //pinta el numero de fallos que lleva el jugador
                     echo "<h3>Fallos: " . $_SESSION['fallos'] . "</h3><br>";

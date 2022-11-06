@@ -15,21 +15,49 @@
 
     <div class='container'>
 
-        <h2>BIENVENIDO AL BINGO</h2>
+        <h2>BIENVENIDO AL BINGO PHP</h2>
+
+       
+
+        <?php
+            if (!isset($_GET['accion'])) {
+        ?>
     
         <div class='row'>
+
             <div class='col-3'>
                 <form action="controlador.php" method='post'>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Número jugadores</label>
                         <input type="number" class="form-control" id="exampleInputPassword1" name='numeroJugadores' min='1' max='5'>
                     </div>
-                    <button type="submit" name='empezar' class="btn btn-primary">Enviar</button>
+                    <button type="submit" name='generarJugadores' class="btn btn-primary">Enviar</button>
+
                 </form>
             </div>
+
         </div>
 
-        
+        <?php
+            } else {
+
+                pintarTambor();
+
+                for($i=0; $i<$_SESSION['numJugadores'];$i++) {
+                    echo "<br>";
+                    echo "<h1>Nick: ".$_SESSION['jugador'.$i][0]."</h1>";
+                    echo "<h3>Saldo: ".$_SESSION['jugador'.$i][1]."</h3>";
+                    pintarCarton($_SESSION['carton'.$i]);
+                }
+
+                //Botón sacar número del tambor
+                echo "<br>";
+                echo "<form action='controlador.php' method='post'>";
+                echo "<button type='submit' name='sacarBola' class='btn btn-primary'>Sacar bola</button>";
+                echo "</form>";
+
+            }
+        ?>
        
 
     </div>
