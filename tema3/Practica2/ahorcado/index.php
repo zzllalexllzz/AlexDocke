@@ -1,4 +1,4 @@
-<?php session_start();
+<?php session_start();//iniciamos la session e incluimoos el archivo lib.php
 include_once('lib.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,9 +18,6 @@ include_once('lib.php'); ?>
     .row {
         height: 700px;
 
-    }
-    #imagen {
-        width: 700px;
     }
     body {
         background-image: url(./img/bg.jpg);
@@ -86,45 +83,17 @@ include_once('lib.php'); ?>
                     pintarPalabra($_SESSION['palabraActual']);
                     echo "</h1>";
                     echo "<br>";
-                    //teclado de letras
-                    echo "<div class=teclado>
-                    <a class='btn btn-outline-light' href='controlador.php?letra=A'>A</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=B'>B</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=C'>C</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=D'>D</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=E'>E</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=F'>F</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=G'>G</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=H'>H</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=I'>I</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=J'>J</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=K'>K</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=L'>L</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=M'>M</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=N'>N</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=Ñ'>Ñ</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=O'>O</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=P'>P</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=Q'>Q</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=R'>R</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=S'>S</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=T'>T</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=U'>U</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=V'>V</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=W'>W</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=X'>X</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=Y'>Y</a>" . " ";
-                    echo "<a class='btn btn-outline-light' href='controlador.php?letra=Z'>Z</a>
-                    </div>";
+                    //pinta el teclado de letras
+                    pintarTeclado();
                     ?>
                 </div>
                 <div class="col ahorcado">
                     <?php
                     //si la palabra es igual a la palabraActual el jugador ganara
                     if ($_SESSION['palabra'] == $_SESSION['palabraActual']) {
+                        echo "<audio src='./img/victoria.wav' autoplay></audio>";
                         echo "<h1 class='text-center ganas text-success'>GANASTE</h1>";
                         echo "<h1 class='text-center ganas text-success'>ENHORABUENA</h1>";
-                        echo "<audio src='./img/victoria.wav' autoplay></audio>";
                         echo "<br>";
                         echo "<br>";
                         echo "<h2 class='text-center gana'><a href='controlador.php?accion=nuevoJuego' class='btn btn-outline-light' class='text-center'>Volver a Jugar</a></h2>";
