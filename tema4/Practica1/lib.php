@@ -218,6 +218,8 @@ echo "Generado.";
 /**********************************************************************/ 
 //metodo para enviar un correo el pdf que haviamos creado anterior mente
 function enviarPdf($email) {
+	//clave email
+	$clave='pkwwbiehgvaaajee';
 	//Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
@@ -228,7 +230,7 @@ try {
     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
     $mail->Username   = $email;                     //SMTP username
-    $mail->Password   = 'pkwwbiehgvaaajee';                               //SMTP password
+    $mail->Password   = $clave;                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
