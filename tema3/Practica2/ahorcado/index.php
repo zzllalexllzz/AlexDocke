@@ -69,7 +69,7 @@ include_once('lib.php'); ?>
                         $_SESSION['fallos'] = 0;
                     }
                     //pinta pablabra para prueba
-                    pintarPalabra($_SESSION['palabra']);
+                    //pintarPalabra($_SESSION['palabra']);
                     //echo '<br>';
                     //pinta el numero de fallos que lleva el jugador
                     echo "<h3>Fallos: " . $_SESSION['fallos'] . "</h3><br>";
@@ -83,8 +83,16 @@ include_once('lib.php'); ?>
                     pintarPalabra($_SESSION['palabraActual']);
                     echo "</h1>";
                     echo "<br>";
-                    //pinta el teclado de letras
-                    pintarTeclado();
+                    //si los fallos llegan a 6 muetrasla palabra q debia adivinar
+                    if ($_SESSION['fallos'] == 6) {
+                        echo "<h3>Tu palabra era:</h3>";
+                        echo "<h2>";
+                        pintarPalabra($_SESSION['palabra']);
+                        echo "</h2>";
+                    }else{
+                        //pinta el teclado de letras
+                        pintarTeclado();
+                    }
                     ?>
                 </div>
                 <div class="col ahorcado">
