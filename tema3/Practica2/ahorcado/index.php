@@ -86,12 +86,16 @@ include_once('lib.php'); ?>
                     //si los fallos llegan a 6 muetrasla palabra q debia adivinar
                     if ($_SESSION['fallos'] == 6) {
                         echo "<h3>Tu palabra era:</h3>";
-                        echo "<h2>";
+                        echo "<h1 class='text-info'>";
                         pintarPalabra($_SESSION['palabra']);
-                        echo "</h2>";
+                        echo "</h1>";
                     }else{
-                        //pinta el teclado de letras
-                        pintarTeclado();
+                        if ($_SESSION['palabra'] == $_SESSION['palabraActual']) {
+                            //quita el teclado
+                        }else {
+                            //pinta el teclado de letras
+                            pintarTeclado();
+                        }
                     }
                     ?>
                 </div>
