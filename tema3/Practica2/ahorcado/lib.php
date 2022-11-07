@@ -1,4 +1,12 @@
 <?php 
+//metodo filtrado
+function filtrado($datos)
+{
+    $datos = trim($datos); // Elimina espacios antes y después de los datos
+    $datos = stripslashes($datos); // Elimina backslashes \
+    $datos = htmlspecialchars($datos); // Traduce caracteres especiales en entidades HTML
+    return $datos;
+}
 //metodo que coge un palabra aleatoria del array diccionario
 function palabraRand() {
      //contiene todas la palabras que usaremos en el array

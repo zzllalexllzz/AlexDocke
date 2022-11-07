@@ -29,4 +29,3 @@ $clientes = $stmt->fetchAll(PDO::FETCH_OBJ);
 foreach ($clientes as $cliente){
     echo $cliente->nombre ." ".$cliente->localidad. "<br>";
 }
-?>
