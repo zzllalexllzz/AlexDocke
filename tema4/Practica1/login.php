@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-danger">
 
 <div class='container'>
 
@@ -62,7 +62,7 @@
                                         id='exampleInputPassword' placeholder='Password'>
                                 </div>
                                 
-                                <button type='submit'  class='btn btn-primary btn-user btn-block'>
+                                <button type='submit'  class='btn btn-danger btn-user btn-block'>
                                     Acceso
                                 </button>
                             </form>

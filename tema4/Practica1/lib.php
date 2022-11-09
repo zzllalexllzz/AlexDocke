@@ -99,7 +99,7 @@ function pintarNuevoProyecto(){
 									id='prioridad' placeholder='Prioridad'>
 							</div>
 							
-							<button type='submit' name='nuevoProyecto' class='btn btn-primary btn-user btn-block'>
+							<button type='submit' name='nuevoProyecto' class='btn btn-danger btn-user btn-block'>
 								Crear Proyecto
 							</button>
 						</form>
