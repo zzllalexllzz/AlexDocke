@@ -87,7 +87,18 @@
 			</button>
 			<div class="collapse" id="dashboard-collapse">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-					<li><a href="#" class="link-dark rounded">Ejercicio 1</a></li>
+					<li><a href="/tema5/Practica1/index.php" class="link-dark rounded">Ejercicio 1</a></li>
+				</ul>
+			</div>
+		</li>
+
+		<li class="mb-1">
+			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+				TEMA 6
+			</button>
+			<div class="collapse" id="dashboard-collapse">
+				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+					<li><a href="/tema6/juegos.php" class="link-dark rounded">Ejercicio 1</a></li>
 				</ul>
 			</div>
 		</li>
