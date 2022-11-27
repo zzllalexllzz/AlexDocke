@@ -20,6 +20,15 @@ class VistaPrestamosMostrarTodas {
                     </select>
                 </div>
                 </th>
+                <td>
+            <input type='hidden' name='accion' value='buscarxEstado'>
+            <button type='submit' name='seleccionarPrestamosEst' class='btn btn-success btn-user btn-block'>
+                Buscar Prestamos
+            </button>
+            </td>
+            </form>
+            ";
+            echo "<form class='user' action='enrutador.php' method='POST'>
                 <th>
                 <div class='form-group'>
                     <select name='dni' class='form-control '>
@@ -32,9 +41,9 @@ class VistaPrestamosMostrarTodas {
                 </div>
                 </th>
                 <td>
-            <input type='hidden' name='accion' value='buscarPrestamos'>
-            <button type='submit' name='seleccionarPrestamos' class='btn btn-success btn-user btn-block'>
-                Buscar Pretamos
+            <input type='hidden' name='accion' value='buscarxDni'>
+            <button type='submit' name='buscarPrestamosDni' class='btn btn-success btn-user btn-block'>
+                Buscar Prestamos
             </button>
             </td>
             </form>

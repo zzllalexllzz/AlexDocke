@@ -45,9 +45,18 @@
             echo '<script>window.location="'."index.php".'"</script>';
         }
 
-        public static function buscarPrestamo($selecPrestamo) { 
-            //LLamar al modelo para busca los prestamos dados el estado y el dni
-            $buscados = PrestamosBD::selectPrestamos($selecPrestamo); 
+        //metodo que busca por estado
+        public static function buscarEstado($selecEstado) { 
+            //LLamar al modelo para busca los prestamos dados el estado 
+            $buscados = PrestamosBD::selectPrestamosEst($selecEstado); 
+
+            VistaPrestamosBuscados::render($buscados);
+        }
+
+        //metodo que busca por dni
+        public static function buscarDni($selecDni) { 
+            //LLamar al modelo para busca los prestamos dado el dni
+            $buscados = PrestamosBD::selectPrestamosDni($selecDni); 
 
             VistaPrestamosBuscados::render($buscados);
         }

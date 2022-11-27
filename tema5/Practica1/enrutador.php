@@ -76,10 +76,16 @@
                 ControladorPrestamos::eliminarPrestamo($delePrestamo);
             }
 
-            if ($_REQUEST['accion'] == "buscarPrestamos") {
-                $selecPrestamo["dni"] = filtrado($_REQUEST['dni']);
-                $selecPrestamo["estado"] = filtrado($_REQUEST['estado']);
-                ControladorPrestamos::buscarPrestamo($selecPrestamo);
+            //recopila el estado y lo envia al controlador  buscar prestamo
+            if ($_REQUEST['accion'] == "buscarxEstado") {
+                $selecEstado["estado"] = filtrado($_REQUEST['estado']);
+                ControladorPrestamos::buscarEstado($selecEstado);
+            }
+
+            //recopila el dni y lo envia al controlador  buscar prestamo
+            if ($_REQUEST['accion'] == "buscarxDni") {
+                $selecDni["dni"] = filtrado($_REQUEST['dni']);
+                ControladorPrestamos::buscarDni($selecDni);
             }
         }
     }

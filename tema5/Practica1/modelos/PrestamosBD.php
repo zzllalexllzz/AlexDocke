@@ -79,15 +79,34 @@ class PrestamosBD {
     }
 
 
-    public static function selectPrestamos($selecPrestamo) {
+    public static function selectPrestamosEst($selecEstado) {
 
         $conexion = ConexionBD::conectar();
 
         //Consulta BBDD
-        $stmt = $conexion->prepare("SELECT prestamos.id, libros.titulo, usuarios.dni, prestamos.fechaInicio, prestamos.fechaFin, prestamos.estado FROM prestamos join libros join usuarios WHERE prestamos.idLibro = libros.id AND prestamos.idUsuario = usuarios.id AND idUsuario = ? AND estado = ?");
+        $stmt = $conexion->prepare("SELECT prestamos.id, libros.titulo, usuarios.dni, prestamos.fechaInicio, prestamos.fechaFin, prestamos.estado FROM prestamos join libros join usuarios WHERE prestamos.idLibro = libros.id AND prestamos.idUsuario = usuarios.id AND estado = ?");
 
-        $stmt->bindValue(1, $selecPrestamo["dni"]);
-        $stmt->bindValue(2, $selecPrestamo["estado"]);
+        $stmt->bindValue(1, $selecEstado["estado"]);
+        
+
+        $stmt->execute();
+
+        //Usamos FETCH_CLASS para que convierta a objetos las filas de la BD
+        $prestamos = $stmt->fetchAll(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, 'Prestamos');
+
+        ConexionBD::cerrar();
+
+        return $prestamos;
+    }
+
+    public static function selectPrestamosDni($selecDni) {
+
+        $conexion = ConexionBD::conectar();
+
+        //Consulta BBDD
+        $stmt = $conexion->prepare("SELECT prestamos.id, libros.titulo, usuarios.dni, prestamos.fechaInicio, prestamos.fechaFin, prestamos.estado FROM prestamos join libros join usuarios WHERE prestamos.idLibro = libros.id AND prestamos.idUsuario = usuarios.id AND idUsuario = ?");
+
+        $stmt->bindValue(1, $selecDni["dni"]);
 
         $stmt->execute();
 
