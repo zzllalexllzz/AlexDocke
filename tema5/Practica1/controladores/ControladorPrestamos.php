@@ -49,7 +49,7 @@
         public static function buscarEstado($selecEstado) { 
             //LLamar al modelo para busca los prestamos dados el estado 
             $buscados = PrestamosBD::selectPrestamosEst($selecEstado); 
-
+            //llama a vistas para pintar la nueva tabla de prestamos buscado por estado
             VistaPrestamosBuscados::render($buscados);
         }
 
@@ -57,7 +57,7 @@
         public static function buscarDni($selecDni) { 
             //LLamar al modelo para busca los prestamos dado el dni
             $buscados = PrestamosBD::selectPrestamosDni($selecDni); 
-
+            //llama a vistas para pintar la nueva tabla de prestamos buscado por dni
             VistaPrestamosBuscados::render($buscados);
         }
     }
