@@ -104,7 +104,7 @@ class PrestamosBD {
         $conexion = ConexionBD::conectar();
 
         //Consulta BBDD
-        $stmt = $conexion->prepare("SELECT prestamos.id, libros.titulo, usuarios.dni, prestamos.fechaInicio, prestamos.fechaFin, prestamos.estado FROM prestamos join libros join usuarios WHERE prestamos.idLibro = libros.id AND prestamos.idUsuario = usuarios.id AND idUsuario = ?");
+        $stmt = $conexion->prepare("SELECT prestamos.id, libros.titulo, usuarios.dni, prestamos.fechaInicio, prestamos.fechaFin, prestamos.estado FROM prestamos join libros join usuarios WHERE prestamos.idLibro = libros.id AND prestamos.idUsuario = usuarios.id AND dni = ?");
 
         $stmt->bindValue(1, $selecDni["dni"]);
 

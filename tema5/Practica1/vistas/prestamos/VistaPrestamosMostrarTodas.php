@@ -31,13 +31,7 @@ class VistaPrestamosMostrarTodas {
             echo "<form class='user' action='enrutador.php' method='POST'>
                 <th>
                 <div class='form-group'>
-                    <select name='dni' class='form-control '>
-                        <option selected>DNI Usuario</option>";
-                        foreach ($usuarios as $usuario) {
-                            echo"<option value='".$usuario->getId()."'>".$usuario->getDni()."</option>";
-                        }
-
-                   echo" </select>
+                    <input type='text' name='dni'  class='form-control ' id='fechaFin' value='' placeholder='Inserte DNI'>
                 </div>
                 </th>
                 <td>
