@@ -46,12 +46,12 @@ class VistaFormularioPrestamos {
                                 </div>
                                 <div class='form-group'>
                                         <select name='estado' class='form-control '>
-                                        <option selected>Estado</option>
-                                        <option value='activo'>Activo</option>
-                                        <option value='devuelto'>Devuelto</option>
-                                        <option value='sobrepasado1Mes'>Sobrepasado1Mes</option>
-                                        <option value='sobrepasado1Año'>Sobrepasado1Año</option>
-                                      </select>
+                                            <option selected>Estado</option>
+                                            <option value='activo'>Activo</option>
+                                            <option value='devuelto'>Devuelto</option>
+                                            <option value='sobrepasado1Mes'>Sobrepasado1Mes</option>
+                                            <option value='sobrepasado1Año'>Sobrepasado1Año</option>
+                                        </select>
                                 </div>
                                 <input type='hidden' name='accion' value='crearPrestamo'>
                                 <button type='submit' name='crearPrestamos' class='btn btn-success btn-user btn-block'>

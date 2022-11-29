@@ -21,40 +21,35 @@ class VistaPrestamosMostrarTodas {
                 </div>
                 </th>
                 <td>
-            <input type='hidden' name='accion' value='buscarxEstado'>
-            <button type='submit' name='seleccionarPrestamosEst' class='btn btn-success btn-user btn-block'>
-                Buscar Prestamos
-            </button>
-            </td>
-            </form>
-            ";
-            echo "<form class='user' action='enrutador.php' method='POST'>
+                    <input type='hidden' name='accion' value='buscarxEstado'>
+                    <button type='submit' name='seleccionarPrestamosEst' class='btn btn-success btn-user btn-block'>Buscar Prestamos</button>
+                </td>
+            </form>";
+         echo "<form class='user' action='enrutador.php' method='POST'>
                 <th>
                 <div class='form-group'>
                     <input type='text' name='dni'  class='form-control ' id='fechaFin' value='' placeholder='Inserte DNI'>
                 </div>
                 </th>
                 <td>
-            <input type='hidden' name='accion' value='buscarxDni'>
-            <button type='submit' name='buscarPrestamosDni' class='btn btn-success btn-user btn-block'>
-                Buscar Prestamos
-            </button>
-            </td>
+                <input type='hidden' name='accion' value='buscarxDni'>
+                <button type='submit' name='buscarPrestamosDni' class='btn btn-success btn-user btn-block'>Buscar Prestamos</button>
+                </td>
             </form>
             </tr>
             </table>";
 //tabla de pretamos
-        echo "<table class='table table-striped text-center'>
-                <thead >
+    echo "<table class='table table-striped text-center'>
+            <thead >
                 <tr>
-                <th>TITULO</th>
-                <th>DNI</th>
-                <th>INICIO</th>
-                <th>FINAL</th>
-                <th>ESTADO</th>
+                    <th>TITULO</th>
+                    <th>DNI</th>
+                    <th>INICIO</th>
+                    <th>FINAL</th>
+                    <th>ESTADO</th>
                 </tr>
-                </thead>
-                <tbody>";
+            </thead>
+            <tbody>";
         foreach ($prestamos as $key => $prestamo) {
             echo "<tr>
             <td>" . $prestamo->titulo . "</td>
@@ -62,28 +57,29 @@ class VistaPrestamosMostrarTodas {
             <td>" . $prestamo->getFechaInicio() . "</td>
 
             <form class='user' action='enrutador.php' method='post'>
-            <td><input type='date' name='fechaFin'  class='form-control '
-            id='fechaFin' value='" . $prestamo->getFechaFin() . "'></td>
+            <td>
+                <input type='date' name='fechaFin'  class='form-control ' id='fechaFin' value='" . $prestamo->getFechaFin() . "'>
+            </td>
             <td> <select name='estado' class='form-control '>
-                <option selected>".$prestamo->getEstado()."</option>
-                <option value='activo'>Activo</option>
-                <option value='devuelto'>Devuelto</option>
-                <option value='sobrepasado1Mes'>Sobrepasado1Mes</option>
-                <option value='sobrepasado1Año'>Sobrepasado1Año</option>
-            </select></td>
-            <input type='hidden' name='id' value='".$prestamo->getId()."'>
-            <td><input type='hidden' name='accion' value='modifiPrestamo'>
-            <button type='submit' name='modificarPrestamos' class='btn btn-outline-success '>
-            <i class='bi bi-info-square'></i>
-            </button>
+                    <option selected>".$prestamo->getEstado()."</option>
+                    <option value='activo'>Activo</option>
+                    <option value='devuelto'>Devuelto</option>
+                    <option value='sobrepasado1Mes'>Sobrepasado1Mes</option>
+                    <option value='sobrepasado1Año'>Sobrepasado1Año</option>
+                </select>
+            </td>
+                <input type='hidden' name='id' value='".$prestamo->getId()."'>
+            <td>
+            <input type='hidden' name='accion' value='modifiPrestamo'>
+            <button type='submit' name='modificarPrestamos' class='btn btn-outline-success '><i class='bi bi-info-square'></i></button>
             </td>
             </form>
             <form class='user' action='enrutador.php' method='post'>
-            <input type='hidden' name='iddel' value='".$prestamo->getId()."'>
-            <td><input type='hidden' name='accion' value='borrarPrestamo'>
-            <button type='submit' name='delPrestamos' class='btn btn-outline-danger '>
-            <i class='bi bi-trash'></i>
-            </button></td>
+                <input type='hidden' name='iddel' value='".$prestamo->getId()."'>
+            <td>
+            <input type='hidden' name='accion' value='borrarPrestamo'>
+            <button type='submit' name='delPrestamos' class='btn btn-outline-danger '><i class='bi bi-trash'></i></button>
+            </td>
             </form>
             </tr>";
             
