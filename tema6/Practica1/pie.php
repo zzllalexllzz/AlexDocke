@@ -28,14 +28,14 @@
     </a>
     <!-- Bootstrap core JavaScript-->
     
-    <script src="texturas/jquery/jquery.min.js"></script>
-    <script src="texturas/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="style/texturas/jquery/jquery.min.js"></script>
+    <script src="style/texturas/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="texturas/jquery-easing/jquery.easing.min.js"></script>
+    <script src="style/texturas/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="style/js/sb-admin-2.min.js"></script>
 
     
 </body>
