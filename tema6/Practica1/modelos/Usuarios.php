@@ -2,45 +2,35 @@
 class Usuarios{
 
     private $id;
-    private $dni;
     private $nombre;
-    private $apellidos;
-    private $edad;
-    private $direccion;
-    private $poblacion;
-    private $telefono;
     private $email;
+    private $password;
+   
 
-    public function __construct($id="",$dni="",$nombre="",$apellidos="",$edad="",$direccion="",$poblacion="",$telefono="",$email=""){
-        $this->id = $id;
-        $this->dni = $dni;
+    public function __construct($nombre="",$email="",$password=""){
         $this->nombre = $nombre;
-        $this->apellidos = $apellidos;
-        $this->edad = $edad;
-        $this->direccion= $direccion;
-        $this->poblacion= $poblacion;
-        $this->telefono= $telefono;
         $this->email = $email;
+        $this->password = $password;
     }
 
-    
+
 
     /**
-     * Get the value of dni
+     * Get the value of id
      */ 
-    public function getDni()
+    public function getId()
     {
-        return $this->dni;
+        return $this->id;
     }
 
     /**
-     * Set the value of dni
+     * Set the value of id
      *
      * @return  self
      */ 
-    public function setDni($dni)
+    public function setId($id)
     {
-        $this->dni = $dni;
+        $this->id = $id;
 
         return $this;
     }
@@ -66,106 +56,6 @@ class Usuarios{
     }
 
     /**
-     * Get the value of apellidos
-     */ 
-    public function getApellidos()
-    {
-        return $this->apellidos;
-    }
-
-    /**
-     * Set the value of apellidos
-     *
-     * @return  self
-     */ 
-    public function setApellidos($apellidos)
-    {
-        $this->apellidos = $apellidos;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of edad
-     */ 
-    public function getEdad()
-    {
-        return $this->edad;
-    }
-
-    /**
-     * Set the value of edad
-     *
-     * @return  self
-     */ 
-    public function setEdad($edad)
-    {
-        $this->edad = $edad;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of direccion
-     */ 
-    public function getDireccion()
-    {
-        return $this->direccion;
-    }
-
-    /**
-     * Set the value of direccion
-     *
-     * @return  self
-     */ 
-    public function setDireccion($direccion)
-    {
-        $this->direccion = $direccion;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of poblacion
-     */ 
-    public function getPoblacion()
-    {
-        return $this->poblacion;
-    }
-
-    /**
-     * Set the value of poblacion
-     *
-     * @return  self
-     */ 
-    public function setPoblacion($poblacion)
-    {
-        $this->poblacion = $poblacion;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of telefono
-     */ 
-    public function getTelefono()
-    {
-        return $this->telefono;
-    }
-
-    /**
-     * Set the value of telefono
-     *
-     * @return  self
-     */ 
-    public function setTelefono($telefono)
-    {
-        $this->telefono = $telefono;
-
-        return $this;
-    }
-
-    /**
      * Get the value of email
      */ 
     public function getEmail()
@@ -186,21 +76,21 @@ class Usuarios{
     }
 
     /**
-     * Get the value of id
+     * Get the value of password
      */ 
-    public function getId()
+    public function getPassword()
     {
-        return $this->id;
+        return $this->password;
     }
 
     /**
-     * Set the value of id
+     * Set the value of password
      *
      * @return  self
      */ 
-    public function setId($id)
+    public function setPassword($password)
     {
-        $this->id = $id;
+        $this->password = $password;
 
         return $this;
     }

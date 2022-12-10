@@ -4,7 +4,7 @@
 
         private static $conexion;
 
-        public static function conectar($bd="biblioteca", $usuario="root", $password="toor", $host="mariadb") {
+        public static function conectar($bd="Navidad", $usuario="root", $password="toor", $host="mariadb") {
 
             try {
                 //LOCALHOST

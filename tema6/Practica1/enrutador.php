@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+//session_destroy();
     //AUTOLOAD
     function autocarga($clase){
         $ruta = "./controladores/$clase.php";
@@ -17,7 +18,7 @@
             include_once $ruta;
         }
 
-        $ruta = "./vistas/prestamos/$clase.php";
+        $ruta = "./vistas/regalos/$clase.php";
         if (file_exists($ruta)){
             include_once $ruta;
         }
@@ -41,52 +42,54 @@
     if ($_REQUEST) {
         if (isset($_REQUEST['accion'])) {
 
-            //llama a la accion -> inicio
+            //pinta el formulario de login usuarios
             if ($_REQUEST['accion'] == "inicio") {
-                ControladorPrestamos::mostrarPrestamos();
+                ControladorUsuario::loginUser();
             }
 
-            //Nuevo prestamo
-            if ($_REQUEST['accion'] == "nuevoPrestamo") {
-                ControladorPrestamos::nuevoPrestamo();
+            //si el usuario no existe pinta el formulario con el error de login
+            if ($_REQUEST['accion'] == "error") {
+                ControladorUsuario::loginUserError();
             }
 
-            //Crear noticia en BD
-            if ($_REQUEST['accion'] == "crearPrestamo") {
-                $prestamo["idUsuario"] = filtrado($_REQUEST['idUsuario']);
-                $prestamo["idLibro"] = filtrado($_REQUEST['idLibro']);
-                $prestamo["fechaInicio"] = filtrado($_REQUEST['fechaInicio']);
-                $prestamo["fechaFin"] = filtrado($_REQUEST['fechaFin']);
-                $prestamo["estado"] = filtrado($_REQUEST['estado']);
-
-                ControladorPrestamos::crearPrestamo($prestamo);
+            //metodo que pinta  los regalos del usuario logueado
+            if ($_REQUEST['accion'] == "mostrarRegalos") {
+                $id = unserialize( $_SESSION["usuario"])->getId();
+                ControladorRegalos::mostrarRegalos($id);
             }
 
-            //recoge los datos del formulario para modificar el prestamo elegido
-            if ($_REQUEST['accion'] == "modifiPrestamo") {
-                $modiPrestamo["fechaFin"] = filtrado($_REQUEST['fechaFin']);
-                $modiPrestamo["estado"] = filtrado($_REQUEST['estado']);
-                $modiPrestamo["id"] = filtrado($_REQUEST['id']);
-                ControladorPrestamos::modificarPrestamo($modiPrestamo);
+            //checklogin metodo que verifica el email y password
+            if ($_REQUEST['accion'] == "checkLogin") {
+                $login["email"] = filtrado($_REQUEST['email']);
+                $login["password"] = filtrado($_REQUEST['password']);
+                ControladorUsuario::chequearLogin($login);
+            }
+            //almacena los dados cambiados para su modificacion
+            if ($_REQUEST['accion'] == "modificarRegalo") {
+                $regalo["nombre"] = filtrado($_REQUEST['nombre']);
+                $regalo["destinatario"] = filtrado($_REQUEST['destinatario']);
+                $regalo["precio"] = filtrado($_REQUEST['precio']);
+                $regalo["estado"] = filtrado($_REQUEST['estado']);
+                $regalo["anio"] = filtrado($_REQUEST['anio']);
+                $regalo["id"] = filtrado($_REQUEST['id']);
+
+                ControladorRegalos::modificarRegalo($regalo);
+            }
+            if ($_REQUEST['accion'] == "checkLogin") {
+                $login["email"] = filtrado($_REQUEST['email']);
+                $login["password"] = filtrado($_REQUEST['password']);
+                ControladorUsuario::chequearLogin($login);
             }
 
-            //recoge el id para asi borrar el prestamo
-            if ($_REQUEST['accion'] == "borrarPrestamo") {
-                $delePrestamo["id"] = filtrado($_REQUEST['iddel']);
-                ControladorPrestamos::eliminarPrestamo($delePrestamo);
-            }
 
-            //recopila el estado y lo envia al controlador  buscar prestamo
-            if ($_REQUEST['accion'] == "buscarxEstado") {
-                $selecEstado["estado"] = filtrado($_REQUEST['estado']);
-                ControladorPrestamos::buscarEstado($selecEstado);
-            }
 
-            //recopila el dni y lo envia al controlador  buscar prestamo
-            if ($_REQUEST['accion'] == "buscarxDni") {
-                $selecDni["dni"] = filtrado($_REQUEST['dni']);
-                ControladorPrestamos::buscarDni($selecDni);
-            }
+
+
+
+
+
+
+
         }
     }
 

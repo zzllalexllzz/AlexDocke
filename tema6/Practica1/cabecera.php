@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>BR Alex 1 - Biblioteca</title>
+    <title>BR Alex 1 - Regalos Navidad</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <!-- Custom fonts for this template-->
     <link href="style/texturas/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -26,14 +26,14 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="enrutador.php?accion=mostrarRegalos">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Biblioteca <sup>1</sup></div>
+                <div class="sidebar-brand-text mx-3">Regalos de Navidad <sup>1</sup></div>
             </a>
 
             <!-- Divider -->
@@ -42,7 +42,7 @@
           
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.php">
+                <a class="nav-link" href="enrutador.php?accion=mostrarRegalos">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>HOME</span></a>
             </li>
@@ -54,8 +54,8 @@
             <div class="sidebar-heading">
                 Interface
             </div>
-
             <!-- Nav Item - Pages Collapse Menu -->
+            
             <li class="nav-item">
 
                 <a class="nav-link collapsed" href="index.php" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -65,13 +65,14 @@
                 
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Prestamos:</h6>
-                        <a class="collapse-item" href="enrutador.php?accion=nuevoPrestamo">Insertar Prestamo <i class="bi bi-plus-square text-success"></i></a>
+                        <h6 class="collapse-header">Aciones:</h6>
+                        <a class="collapse-item" href="enrutador.php">Insertar Prestamo <i class="bi bi-plus-square text-success"></i></a>
                        <!-- <a class="collapse-item" href="#">Eliminar todo</a>-->
                     </div>
                 </div>
 
-            </li>
+            </li>';
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -90,7 +91,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-success topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-info topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -129,7 +130,15 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            
+                                <?php
+                                    //si el usuario exixte pintara el email de usuario en la cabecera si no  redirijira al formulario login
+                                    if (isset($_SESSION['usuario'])) {
+                                        echo "<span class='mr-2 d-none d-lg-inline text-gray-900 small'>".unserialize($_SESSION['usuario'])->getEmail()."</span>";
+                                    } else {
+                                        echo "<script>window.location='enrutador.php?accion=inicio';</script>";
+                                    }
+                                ?>
+
                             <img class='img-profile rounded-circle' src='style/img/undraw_profile.svg'>  
                             </a>
                             <!-- Dropdown - User Information -->
@@ -143,6 +152,5 @@
                         </li>
                     </ul>
                 </nav>
-         <!-- Begin Page Content -->
-         <div class="container-fluid">
-            
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
