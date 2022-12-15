@@ -30,7 +30,7 @@ session_start();
     }
     spl_autoload_register("autocarga");
 
-    //Función para subir imágenes al servidor
+    //metodo para subir una imagen integrado a la insercion de nuevo enlace
     function subirImagen() {
 
         $directorioSubida = "img/";
