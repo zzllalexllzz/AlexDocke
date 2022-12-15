@@ -96,6 +96,7 @@ class ControladorUsuario{
 
         $pdf->setFont('dejavusans', '', 12, '', true);
 
+        //muestra los regalos con sus enlaces  en forma de lista
             $html= "<dl>";
             foreach ($regalos as $regalo) {
                 $html.="<dt>".$regalo->getId()." - ".$regalo->getNombre()." - ".$regalo->getDestinatario()." - ".$regalo->getPrecio()." - ".$regalo->getEstado()." - ".$regalo->getAnio()."</dt>";
