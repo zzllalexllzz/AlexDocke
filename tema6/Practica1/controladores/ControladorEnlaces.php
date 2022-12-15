@@ -20,7 +20,7 @@ class ControladorEnlaces {
     public static function nuevoEnlace($enlace) {
 
         EnlacesBD::nuevoEnlace($enlace);
-        //echo "<script>window.location='enrutador.php?accion=verEnlaces&id=".$enlace["idRegalo"]."';</script>";
+        echo "<script>window.location='enrutador.php?accion=verEnlaces&id=".$enlace["idRegalo"]."';</script>";
     }
 
     //metodo que recoge los datos para devolverlos ordenados Acendentemente
