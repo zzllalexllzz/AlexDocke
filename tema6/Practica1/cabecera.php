@@ -39,7 +39,7 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-          
+
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="enrutador.php?accion=mostrarRegalos">
@@ -55,19 +55,21 @@
                 Interface
             </div>
             <!-- Nav Item - Pages Collapse Menu -->
-            
+
             <li class="nav-item">
 
                 <a class="nav-link collapsed" href="index.php" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>ACCIONES</span>
                 </a>
-                
+
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Aciones:</h6>
-                        <a class="collapse-item" href="enrutador.php">Insertar Prestamo <i class="bi bi-plus-square text-success"></i></a>
-                       <!-- <a class="collapse-item" href="#">Eliminar todo</a>-->
+                        <a class="collapse-item" href="#" data-toggle="modal" data-target="#añadirRegalo">Nuevo Regalo <i class="bi bi-plus-square text-success"></i></a>
+                        <a class="collapse-item" href="#" data-toggle="modal" data-target="#añadirEnlace">Nuevo Enlaces <i class="bi bi-plus-square text-success"></i></a>
+                        <a class="collapse-item" href="enrutador.php?accion=generarPDF">Generar PDF <i class="bi bi-filetype-pdf text-danger"></i></i></a>
+                    <!-- <a class="collapse-item" href="#">Eliminar todo</a>-->
                     </div>
                 </div>
 
@@ -139,7 +141,7 @@
                                     }
                                 ?>
 
-                            <img class='img-profile rounded-circle' src='style/img/undraw_profile.svg'>  
+                            <img class='img-profile rounded-circle' src='style/img/undraw_profile.svg'>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
