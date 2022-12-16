@@ -6,16 +6,9 @@ class VistaEnlacesMostrar{
         include("./cabecera.php");
             echo"<table class='table table-striped text-center w-auto'>
                 <tr>";
-                echo"<form class='user' action='enrutador.php' method='post'>
-                        <input type='hidden' name='id' value='".$_REQUEST["id"]."'>
-                    <input type='hidden' name='accion' value='ordenarEnlaceA'>
-                    <button type='submit' class='btn btn-outline-primary'>Ordenar Acendente</i></button>
-                </form>
-                <form class='user' action='enrutador.php' method='post'>
-                        <input type='hidden' name='id' value='".$_REQUEST["id"]."'>
-                    <input type='hidden' name='accion' value='ordenarEnlaceD'>
-                    <button type='submit' class='btn btn-outline-primary'>Ordenar Decendente</i></button>
-                </form>
+                echo"
+                <th><a class='btn btn-outline-primary' href='enrutador.php?accion=ordenarEnlaceA&id=".$_REQUEST["id"]."' role='button'>Ordenar Acendente</a></th>
+                <th><a class='btn btn-outline-primary' href='enrutador.php?accion=ordenarEnlaceD&id=".$_REQUEST["id"]."' role='button'>Ordenar Decendente</a></th>
                 </tr>
             </table>";
 
