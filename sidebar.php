@@ -82,10 +82,10 @@
 		</li>
 
 		<li class="mb-1">
-			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema5" aria-expanded="false">
 				TEMA 5
 			</button>
-			<div class="collapse" id="dashboard-collapse">
+			<div class="collapse" id="tema5">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 					<li><a href="/tema5/Practica1/index.php" class="link-dark rounded">Ejercicio 1</a></li>
 				</ul>
@@ -93,10 +93,10 @@
 		</li>
 
 		<li class="mb-1">
-			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema6" aria-expanded="false">
 				TEMA 6
 			</button>
-			<div class="collapse" id="dashboard-collapse">
+			<div class="collapse" id="tema6">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 					<li><a href="/tema6/Practica1/index.php" class="link-dark rounded">Ejercicio 1</a></li>
 				</ul>
