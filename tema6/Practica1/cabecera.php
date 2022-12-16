@@ -66,8 +66,14 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Aciones:</h6>
-                        <a class="collapse-item" href="#" data-toggle="modal" data-target="#añadirRegalo">Nuevo Regalo <i class="bi bi-plus-square text-success"></i></a>
-                        <a class="collapse-item" href="#" data-toggle="modal" data-target="#añadirEnlace">Nuevo Enlaces <i class="bi bi-plus-square text-success"></i></a>
+
+                        <?php
+                            if ($_REQUEST["accion"]=="mostrarRegalos") {
+                                echo '<a class="collapse-item" href="#" data-toggle="modal" data-target="#añadirRegalo">Nuevo Regalo <i class="bi bi-plus-square text-success"></i></a>';
+                            } else {
+                                echo '<a class="collapse-item" href="#" data-toggle="modal" data-target="#añadirEnlace">Nuevo Enlaces <i class="bi bi-plus-square text-success"></i></a>';
+                            }
+                        ?>
                         <a class="collapse-item" href="enrutador.php?accion=generarPDF">Generar PDF <i class="bi bi-filetype-pdf text-danger"></i></i></a>
                     <!-- <a class="collapse-item" href="#">Eliminar todo</a>-->
                     </div>
@@ -134,7 +140,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?php
                                     //si el usuario exixte pintara el email de usuario en la cabecera si no  redirijira al formulario login
-                                    if (isset($_SESSION['usuario'])) {
+                                    if ($_SESSION['usuario']) {
                                         echo "<span class='mr-2 d-none d-lg-inline text-gray-900 small'>".unserialize($_SESSION['usuario'])->getEmail()."</span>";
                                     } else {
                                         echo "<script>window.location='enrutador.php?accion=inicio';</script>";
