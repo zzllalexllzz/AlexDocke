@@ -1,12 +1,10 @@
-
-            
         </div>
     </div>
     <!-- Page Wrapper -->
     <div id="wrapper">
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-             <!-- Footer -->
+            <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -99,7 +97,7 @@
                             <input type='number' name='precio' class='form-control' placeholder='Precio'>
                         </div>
                         <div class='form-group'>
-                            <input type='file' name='imagen' class='form-control' placeholder='Enlace Imagen'>
+                            <input type='file' name='imagen' class='form-control' placeholder=''>
                         </div>
                         <div class='form-group'>
                             <select name='prioridad' class='form-control '>
@@ -148,7 +146,6 @@
     <!-- Custom scripts for all pages-->
     <script src="style/js/sb-admin-2.min.js"></script>
 
-    
 </body>
 
 </html>
