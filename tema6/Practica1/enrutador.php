@@ -179,11 +179,20 @@ session_start();
                 ControladorEnlaces::mostrarEnlacesOrdD($id);
             }
 
+            //generar los regalos  y sus enlaces
             if ($_REQUEST['accion'] == "generarPDF") {
 
                 $id = unserialize( $_SESSION["usuario"])->getId();
 
                 ControladorUsuario::generarPdf($id);
+            }
+
+            //destruye la session
+            if ($_REQUEST['accion'] == "destroy") {
+
+                session_destroy();
+
+                echo "<script>window.location='enrutador.php?accion=inicio';</script>";;
             }
         }
     }

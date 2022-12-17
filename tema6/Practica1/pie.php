@@ -131,7 +131,7 @@
                 <div class="modal-body">¿Esta seguro de salir de esta pagina y cerrar la sesión?.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-danger" href="enrutador.php?accion=inicio">Cerrar sesión</a>
+                    <a class="btn btn-danger" href="enrutador.php?accion=destroy">Cerrar sesión</a>
                 </div>
             </div>
         </div>
