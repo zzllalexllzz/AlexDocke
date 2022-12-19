@@ -110,7 +110,7 @@
 			</button>
 			<div class="collapse" id="tema7">
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-					<li><a href="" class="link-dark rounded">Ejercicio 1</a></li>
+				<li><a href="/tema7/examen1/index.php" class="link-dark rounded">Examen 1</a></li>
 				</ul>
 			</div>
 		</li>
