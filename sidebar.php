@@ -115,5 +115,17 @@
 			</div>
 		</li>
 
+		<li class="mb-1">
+			<button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#tema8" aria-expanded="false">
+				TEMA 8
+			</button>
+			<div class="collapse" id="tema8">
+				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+				<li><a href="/tema8/Practica1/index.php" class="link-dark rounded">Ejercicio 1</a></li>
+				<li><a href="/tema8/Practica2/index.php" class="link-dark rounded">Ejercicio 2</a></li>
+				</ul>
+			</div>
+		</li>
+
 	</ul>
 </div>

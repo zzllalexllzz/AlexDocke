@@ -27,15 +27,15 @@ class JugandoBD{
         $conexion = ConexionBD::conectar();
 
         //Consulta BBDD
-        $stmt = $conexion->prepare("SELECT jugadores.nombre,jugadores.apodo jugadores.nivel FROM jugando JOIN jugadores JOIN partidas WHERE jugando.idPartida=partidas.id AND  jugando.idJugador=jugadores.id AND jugando.idPartida=?");
+        $stmt = $conexion->prepare("SELECT jugadores.nombre,jugadores.apodo, jugadores.nivel FROM jugando JOIN jugadores JOIN partidas WHERE jugando.idPartida=partidas.id AND  jugando.idJugador=jugadores.id AND jugando.idPartida=?");
 
-        $stmt->bindValue(1, $id);
+        $stmt->bindValue(1, $id["id"]);
 
         $stmt->execute();
 
         //Usamos FETCH_CLASS para que convierta a objetos las filas de la BD
-        $jugando = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+        $jugando = $stmt->fetchAll( PDO::FETCH_ASSOC);
+        var_dump($jugando);
         ConexionBD::cerrar();
 
         return $jugando;

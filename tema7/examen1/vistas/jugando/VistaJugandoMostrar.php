@@ -42,7 +42,7 @@ class VistaJugandoMostrar{
         foreach($jugandos as $jugando) {
 
             echo '
-              <li class="list-group-item">Fecha: '.$jugando["nombre"].$jugando["apodo"].$jugando["nivel"].'</li>
+              <li class="list-group-item">NOMBRE: '.$jugando["nombre"].' APODO:'.$jugando["apodo"].' NIVEL:'.$jugando["nivel"].'</li>
             ';
         }
 
