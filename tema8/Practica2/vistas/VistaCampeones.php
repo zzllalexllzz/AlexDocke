@@ -53,21 +53,21 @@ class VistaCampeones{
             foreach($respPHP->data as $champ) {
                 if ($champ->id == $id) {
                     echo"
-                    <div class='card mb-3 bg-warning' style='max-width: 800px;'>
+                    <div class='card mb-3 ' style='max-width: 800px; background: url(./img/bg.jpg);'>
                     <div class='row g-0'>
                       <div class='col-md-4'>
                         <img src='https://ddragon.leagueoflegends.com/cdn/img/champion/loading/{$champ->id}_0.jpg' class='img-fluid rounded-start' alt='...'>
                       </div>
                       <div class='col-md-8'>
                         <div class='card-body'>
-                          <h1 class='card-title'>{$champ->name}</h1>
-                          <h5 class='card-title'>{$champ->title}</h5>
-                          <p class='card-text'>{$champ->blurb}</p>
-                          <h5 class='card-title'>Estadisticas</h5>
-                          <p class='card-text'>Ataque: {$champ->info->attack}</p>
-                          <p class='card-text'>Defensa: {$champ->info->defense}</p>
-                          <p class='card-text'>Magia: {$champ->info->magic}</p>
-                          <p class='card-text'>Dificultad: {$champ->info->difficulty}</p>
+                          <h1 class='card-title text-warning'>{$champ->name}</h1>
+                          <h5 class='card-title text-warning'>{$champ->title}</h5>
+                          <p class='card-text text-light'>{$champ->blurb}</p>
+                          <h5 class='card-title text-info'>Estadisticas</h5>
+                          <p class='card-text text-success'>Ataque: {$champ->info->attack}</p>
+                          <p class='card-text text-success'>Defensa: {$champ->info->defense}</p>
+                          <p class='card-text text-success'>Magia: {$champ->info->magic}</p>
+                          <p class='card-text text-success'>Dificultad: {$champ->info->difficulty}</p>
                           <p class='card-text'><small class='text-muted'>{$champ->partype}</small></p>
                         </div>
                       </div>
