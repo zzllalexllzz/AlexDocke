@@ -21,7 +21,7 @@ class ControladorEnlaces {
 
         $enlaceInsert = new Enlaces(0,$enlace["idRegalo"],$enlace["nombre"],$enlace["web"],$enlace["precio"],$enlace["imagen"],$enlace["prioridad"]);
         EnlacesBD::nuevoEnlace($enlaceInsert);
-        echo "<script>window.location='enrutador.php?accion=verEnlaces&id=".$enlace["idRegalo"]."';</script>";
+        //echo "<script>window.location='enrutador.php?accion=verEnlaces&id=".$enlace["idRegalo"]."';</script>";
     }
 
     //metodo que recoge los datos para devolverlos ordenados Acendentemente
