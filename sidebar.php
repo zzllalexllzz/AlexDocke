@@ -123,6 +123,8 @@
 				<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
 				<li><a href="/tema8/Practica1/index.php" class="link-dark rounded">Ejercicio 1</a></li>
 				<li><a href="/tema8/Practica2/index.php" class="link-dark rounded">Ejercicio 2</a></li>
+				<li><a href="/tema8/Practica3/index.php" class="link-dark rounded">ChatGPT Admin</a></li>
+				<li><a href="/tema8/Practica3_1/index.php" class="link-dark rounded">ChatGPT Blog</a></li>
 				</ul>
 			</div>
 		</li>
